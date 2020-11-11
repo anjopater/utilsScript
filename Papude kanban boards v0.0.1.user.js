@@ -3,6 +3,8 @@
 // @namespace
 // @version      0.1
 // @description  try to take over the world!
+// @updateURL    https://github.com/anjopater/utilsScript/blob/master/Papude%20kanban%20boards%20v0.0.1.user.js
+// @downloadURL  https://github.com/anjopater/utilsScript/blob/master/Papude%20kanban%20boards%20v0.0.1.user.js
 // @author       You
 // @match        https://dev.azure.com/*
 // @grant        GM_xmlhttpRequest
