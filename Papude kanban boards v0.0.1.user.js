@@ -20,7 +20,7 @@
     watchToDevColumn();
   }, 2000);
 
-  function paint() {
+  function setTypeOfServices() {
     let services = document.querySelectorAll(
       'div[field="Custom.TypeofService"] > div[class*="field-inner-element"]'
     );
