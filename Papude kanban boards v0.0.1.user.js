@@ -17,6 +17,7 @@
     limitWIP();
     hideWIP();
     setStyleWipeLine();
+    watchToDevColumn();
   }, 2000);
 
   function paint() {
@@ -40,9 +41,6 @@
       }
     });
   }
-  setTimeout(function () {
-    insertCol();
-  }, 2000);
 
   //Limit WIP by user
   function limitWIP() {
@@ -62,11 +60,11 @@
           n.querySelector("[field='System.BoardColumn'] .field-inner-element")
             .innerText
         );
-        console.log(
+        /* console.log(
           r,
           n.querySelector("[field='System.BoardColumn'] .field-inner-element")
             .innerText
-        );
+        );*/
         return r;
       });
       const cols = u.querySelectorAll(
@@ -96,8 +94,8 @@
 
   function hideWIP() {
     let wipis = document.querySelectorAll(".boards-controls-limit");
-    wipis.forEach((s) => {
-      s.style.display = "none";
+    wipis.forEach((s, index) => {
+      if (index !== 0) s.style.display = "none";
     });
   }
 
@@ -107,5 +105,22 @@
       const header = u.querySelector(".member-header");
       header.style.marginLeft = "25%";
     });
+  }
+
+  function watchToDevColumn() {
+    let cards = document.querySelectorAll(
+      ".member-vertical .member-content .cell.member-content .ui-draggable-handle"
+    );
+    const toDevCards = [];
+    cards.forEach((card) => {
+      const arial = card.getAttribute("aria-label");
+      if (!/TO DEV/.test(arial) && !/Yuri/.test(arial)) {
+        toDevCards.push(card);
+      }
+    });
+
+    document.querySelector(
+      ".header-container .boards-controls-limit .current"
+    ).innerText = toDevCards.length;
   }
 })();
