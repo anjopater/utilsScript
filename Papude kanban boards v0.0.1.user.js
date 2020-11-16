@@ -60,11 +60,6 @@
           n.querySelector("[field='System.BoardColumn'] .field-inner-element")
             .innerText
         );
-        /* console.log(
-          r,
-          n.querySelector("[field='System.BoardColumn'] .field-inner-element")
-            .innerText
-        );*/
         return r;
       });
       const cols = u.querySelectorAll(
